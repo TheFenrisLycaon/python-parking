@@ -1,11 +1,12 @@
-from dataclasses import dataclass
+from dataclasses import dataclass, field
+from itertools import count
 
 
 @dataclass
 class User:
-    id: str
+    id: int = field(default_factory=count().__next__, init=False)
     first_name: str
     last_name: str
     email: str
-    password: str
     username: str
+    password: str

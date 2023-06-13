@@ -1,5 +1,6 @@
-from vehicle import type
 from enum import Enum
+
+from vehicle import type
 
 
 class Rate(Enum):

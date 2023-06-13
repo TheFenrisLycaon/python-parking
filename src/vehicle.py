@@ -1,6 +1,5 @@
-from enum import Enum
 from dataclasses import dataclass
-from src.users import User
+from enum import Enum
 
 
 class type(Enum):
@@ -10,6 +9,6 @@ class type(Enum):
 
 
 class Vehicle:
-    user_id: User.id
+    user_id: int
     license_num: str
     type: type
