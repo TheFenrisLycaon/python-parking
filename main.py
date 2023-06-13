@@ -1,7 +1,6 @@
-from src import reservations
-from datetime import datetime, timedelta
-from utils import banner, ui
-from src.session import login, signup
+from utils.ui import banner_large
+from src.session import check_login
+
 
 # s = datetime.now() + timedelta(hours=1)
 # e = datetime.now() + timedelta(hours=3)
@@ -11,24 +10,12 @@ from src.session import login, signup
 
 
 def main():
-    print(banner.banner_large)
+    print(banner_large)
 
-    user_check = int(input("[1] Login / [2] Sign Up\n\tEnter you choice::\t"))
+    logged_in = 0
 
-    if user_check == 1:
-        ui.clear()
-        print(banner.banner_small)
-        print("Logging in...")
-        login()
-    elif user_check == 2:
-        ui.clear()
-        print(banner.banner_small)
-        print("Signing Up...")
-        signup()
-    else:
-        ui.clear()
-        print(banner.banner_small)
-        print("Wrong Choice...\t Exiting...")
+    while not logged_in:
+        logged_in = check_login()
 
 
 if __name__ == "__main__":

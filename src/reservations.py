@@ -1,11 +1,11 @@
-from dataclasses import dataclass
 import datetime
+from dataclasses import dataclass
 
 
 @dataclass
 class Reservation:
-    garage_id: str
-    spot_id: str
+    garage_id: int
+    spot_id: int
     amount: float
     paid: bool
     start_time: datetime.datetime
